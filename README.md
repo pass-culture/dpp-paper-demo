@@ -82,4 +82,5 @@ This demo focuses solely on the core DPP sampling logic for clarity and reproduc
 Feel free to reach out with questions or feedback via Issues or email.
 
 License: MIT
+
 Maintainers: Carole Ibrahim, pass Culture
