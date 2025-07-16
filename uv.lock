@@ -36,6 +36,15 @@ wheels = [
 ]
 
 [[package]]
+name = "argparse"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/18/dd/e617cfc3f6210ae183374cd9f6a26b20514bbb5a792af97949c5aacddf0f/argparse-1.4.0.tar.gz", hash = "sha256:62b089a55be1d8949cd2bc7e0df0bddb9e028faefc8c32038cc84862aefdd6e4", size = 70508, upload-time = "2015-09-12T20:22:16.217Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f2/94/3af39d34be01a24a6e65433d19e107099374224905f1e0cc6bbe1fd22a2f/argparse-1.4.0-py2.py3-none-any.whl", hash = "sha256:c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314", size = 23000, upload-time = "2015-09-14T16:03:16.137Z" },
+]
+
+[[package]]
 name = "array-record"
 version = "0.7.2"
 source = { registry = "https://pypi.org/simple" }
@@ -448,10 +457,12 @@ dependencies = [
     { name = "pandas" },
     { name = "pyarrow" },
     { name = "sentence-transformers" },
+    { name = "tensorflow" },
     { name = "tensorflow-datasets" },
-    { name = "tensorflow-macos" },
+    { name = "tensorflow-macos", marker = "sys_platform == 'darwin'" },
     { name = "tensorflow-recommenders" },
     { name = "tf-keras" },
+    { name = "unittest2" },
 ]
 
 [package.metadata]
@@ -463,10 +474,12 @@ requires-dist = [
     { name = "pandas", specifier = ">=2.3.1" },
     { name = "pyarrow", specifier = ">=20.0.0" },
     { name = "sentence-transformers", specifier = ">=5.0.0" },
+    { name = "tensorflow", specifier = "==2.16.2" },
     { name = "tensorflow-datasets", specifier = ">=4.9.9" },
-    { name = "tensorflow-macos", specifier = ">=2.16.2" },
+    { name = "tensorflow-macos", marker = "sys_platform == 'darwin'", specifier = ">=2.16.2" },
     { name = "tensorflow-recommenders", specifier = ">=0.7.3" },
     { name = "tf-keras", specifier = ">=2.16.0" },
+    { name = "unittest2", specifier = "==1.1.0" },
 ]
 
 [[package]]
@@ -1086,6 +1099,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/2d/c2/de1db8c6d413597076a4259cea409b83459b2db997c003578affdd32bf66/libclang-18.1.1-py2.py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:69f8eb8f65c279e765ffd28aaa7e9e364c776c17618af8bff22a8df58677ff4f", size = 24921494, upload-time = "2024-03-17T16:14:20.132Z" },
     { url = "https://files.pythonhosted.org/packages/0b/2d/3f480b1e1d31eb3d6de5e3ef641954e5c67430d5ac93b7fa7e07589576c7/libclang-18.1.1-py2.py3-none-win_amd64.whl", hash = "sha256:4dd2d3b82fab35e2bf9ca717d7b63ac990a3519c7e312f19fa8e86dcc712f7fb", size = 26415083, upload-time = "2024-03-17T16:42:21.703Z" },
     { url = "https://files.pythonhosted.org/packages/71/cf/e01dc4cc79779cd82d77888a88ae2fa424d93b445ad4f6c02bfc18335b70/libclang-18.1.1-py2.py3-none-win_arm64.whl", hash = "sha256:3f0e1f49f04d3cd198985fea0511576b0aee16f9ff0e0f0cad7f9c57ec3c20e8", size = 22361112, upload-time = "2024-03-17T16:42:59.565Z" },
+]
+
+[[package]]
+name = "linecache2"
+version = "1.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/44/b0/963c352372c242f9e40db02bbc6a39ae51bde15dddee8523fe4aca94a97e/linecache2-1.0.0.tar.gz", hash = "sha256:4b26ff4e7110db76eeb6f5a7b64a82623839d595c2038eeda662f2a2db78e97c", size = 11013, upload-time = "2015-03-06T01:33:30.161Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c7/a3/c5da2a44c85bfbb6eebcfc1dde24933f8704441b98fdde6528f4831757a6/linecache2-1.0.0-py2.py3-none-any.whl", hash = "sha256:e78be9c0a0dfcbac712fe04fbf92b96cddae80b1b842f24248214c8496f006ef", size = 12967, upload-time = "2015-03-06T01:33:36.657Z" },
 ]
 
 [[package]]
@@ -2632,41 +2654,6 @@ wheels = [
 ]
 
 [[package]]
-name = "tensorflow-intel"
-version = "2.16.2"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "absl-py" },
-    { name = "astunparse" },
-    { name = "flatbuffers" },
-    { name = "gast" },
-    { name = "google-pasta" },
-    { name = "grpcio" },
-    { name = "h5py" },
-    { name = "keras" },
-    { name = "libclang" },
-    { name = "ml-dtypes" },
-    { name = "numpy" },
-    { name = "opt-einsum" },
-    { name = "packaging" },
-    { name = "protobuf", version = "4.21.12", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "protobuf", version = "4.25.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "requests" },
-    { name = "setuptools" },
-    { name = "six" },
-    { name = "tensorboard" },
-    { name = "tensorflow-io-gcs-filesystem", marker = "python_full_version < '3.12'" },
-    { name = "termcolor" },
-    { name = "typing-extensions" },
-    { name = "wrapt" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/31/5c/ff36582435be7ce60cb2c84e961372b76330928be8da6c85f7880a0f5df3/tensorflow_intel-2.16.2-cp310-cp310-win_amd64.whl", hash = "sha256:484024ee68c3bcea12e76b2358ed671cf02e71d121280268c3ee03d9513dd4ce", size = 376920038, upload-time = "2024-06-28T19:47:28.596Z" },
-    { url = "https://files.pythonhosted.org/packages/46/87/c3e4e9fe7c630f38a6984afdd1d4ed531ef9c74dc66b86f46f6bdd89d608/tensorflow_intel-2.16.2-cp311-cp311-win_amd64.whl", hash = "sha256:d508e15fae4a60f233794c591d4b0e4b1ed92ccb3f017fd107950f5f45f3bd43", size = 376961926, upload-time = "2024-06-28T19:47:42.236Z" },
-    { url = "https://files.pythonhosted.org/packages/c2/7d/d4b381e7a7a0c22179a886a3814a974adfb6edfdde9ef594f55902e4896b/tensorflow_intel-2.16.2-cp312-cp312-win_amd64.whl", hash = "sha256:239af202645145c1c39e7dfe714687e1b1a57a73e5022aacae0313d917f09608", size = 377067160, upload-time = "2024-06-28T19:47:55.663Z" },
-]
-
-[[package]]
 name = "tensorflow-io-gcs-filesystem"
 version = "0.37.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2691,7 +2678,6 @@ version = "2.16.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "tensorflow", marker = "platform_machine == 'arm64' and sys_platform == 'darwin'" },
-    { name = "tensorflow-intel", marker = "sys_platform == 'win32'" },
 ]
 wheels = [
     { url = "https://files.pythonhosted.org/packages/25/66/c504f415d5356def468e44e09dad60bf0d0f720b399e6c9af3488382e433/tensorflow_macos-2.16.2-cp310-cp310-macosx_12_0_arm64.whl", hash = "sha256:6a945ad9c0add0d9be46f1addc07e5475ac24217609bfea6e05d9c5ab66e7204", size = 2135, upload-time = "2024-06-28T19:12:28.64Z" },
@@ -2875,6 +2861,18 @@ wheels = [
 ]
 
 [[package]]
+name = "traceback2"
+version = "1.4.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "linecache2" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/eb/7f/e20ba11390bdfc55117c8c6070838ec914e6f0053a602390a598057884eb/traceback2-1.4.0.tar.gz", hash = "sha256:05acc67a09980c2ecfedd3423f7ae0104839eccb55fc645773e1caa0951c3030", size = 15872, upload-time = "2015-03-09T06:57:27.525Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/17/0a/6ac05a3723017a967193456a2efa0aa9ac4b51456891af1e2353bb9de21e/traceback2-1.4.0-py2.py3-none-any.whl", hash = "sha256:8253cebec4b19094d67cc5ed5af99bf1dba1285292226e98a31929f87a5d6b23", size = 16793, upload-time = "2015-03-09T06:57:35.15Z" },
+]
+
+[[package]]
 name = "traitlets"
 version = "5.14.3"
 source = { registry = "https://pypi.org/simple" }
@@ -2947,6 +2945,20 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz", hash = "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9", size = 196380, upload-time = "2025-03-23T13:54:43.652Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/5c/23/c7abc0ca0a1526a0774eca151daeb8de62ec457e77262b66b359c3c7679e/tzdata-2025.2-py2.py3-none-any.whl", hash = "sha256:1a403fada01ff9221ca8044d701868fa132215d84beb92242d9acd2147f667a8", size = 347839, upload-time = "2025-03-23T13:54:41.845Z" },
+]
+
+[[package]]
+name = "unittest2"
+version = "1.1.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "argparse" },
+    { name = "six" },
+    { name = "traceback2" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/7f/c4/2b0e2d185d9d60772c10350d9853646832609d2f299a8300ab730f199db4/unittest2-1.1.0.tar.gz", hash = "sha256:22882a0e418c284e1f718a822b3b022944d53d2d908e1690b319a9d3eb2c0579", size = 81432, upload-time = "2015-06-30T06:48:27.26Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/72/20/7f0f433060a962200b7272b8c12ba90ef5b903e218174301d0abfd523813/unittest2-1.1.0-py2.py3-none-any.whl", hash = "sha256:13f77d0875db6d9b435e1d4f41e74ad4cc2eb6e1d5c824996092b3430f088bb8", size = 96379, upload-time = "2015-06-30T06:48:35.477Z" },
 ]
 
 [[package]]

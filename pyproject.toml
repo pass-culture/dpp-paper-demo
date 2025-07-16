@@ -13,7 +13,9 @@ dependencies = [
     "pyarrow>=20.0.0",
     "sentence-transformers>=5.0.0",
     "tensorflow-datasets>=4.9.9",
-    "tensorflow-macos>=2.16.2",
+    "tensorflow-macos>=2.16.2 ; sys_platform == 'darwin'",
+    "tensorflow==2.16.2",
     "tensorflow-recommenders>=0.7.3",
     "tf-keras>=2.16.0",
+    "unittest2==1.1.0",
 ]
