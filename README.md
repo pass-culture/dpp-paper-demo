@@ -17,17 +17,22 @@ This demo shows how we integrated DPP into our recommendation pipeline illustrat
 
 ![alt text](images/pipeline_diagram.png "Overview of the pass Culture recommender architecture with DPP integration.")
 
-This demo simplifies the production pipeline by only showing the interesting part: 
-- the Data folder contains sample item embeddings and samples of usera nd item two tower embeddings. These samples are taken from production model from July 2025. Users information are completely protected.
-- We use the same dpp class as in the prodcution code but with the samples embeddings
+This demo simplifies the production pipeline by only showing the interesting parts: 
+- We use the same dpp class as in the prodcution code but with movielens data
 - the [`dppy`](https://github.com/guilgautier/dppy) library is the one we use in production 
-- Visualize the impact of DPP-based diversification on items recommended with and without the dpp filter. We also add metrics calculations like used in the paper. 
+- Visualize the impact of DPP-based diversification on items recommended with and without the dpp filter. We also add the volume metric calculations like used in the paper. 
 
 ---
 
 ## 📁 Repository Structure
-run tree after you finish
-
+.
+├── images
+│   └── pipeline_diagram.png
+├── LICENSE
+├── main.ipynb
+├── pyproject.toml
+├── README.md
+└── uv.lock
 ---
 
 ## Getting Started
@@ -37,29 +42,19 @@ run tree after you finish
 - Python ≥ 3.8
 - Install dependencies:
 
-```bash
-pip install -r requirements.txt
 ```
-
-## Main libraries used:
-
-- numpy, scikit-learn, matplotlib
-
-- [dppy](https://dppy.readthedocs.io/en/latest/) (Determinantal Point Process library)
+uv init && uv sync
+```
 
 ## Running the Demo
-Run the main pipeline via script:
+Run the notebook `main.ipynb`
 
-```bash
-python src/recommender.py
-```
-
-Or explore interactively with the notebook demo_dpp.ipynb
 
 ## Demo Overview
-1- Simulate user-item relevance scores
-2- Create item embeddings (toy data or realistic embeddings)
-3- Sample diverse recommendation sets using DPP
+1- Prepare movieLens data
+2- Create item embeddings with hugging face
+3- train a two tower model
+4- Sample diverse recommendation sets using DPP
 4- Compare top-k relevance-only selection with DPP-enhanced selection
 
 ## Reference
