@@ -47,7 +47,9 @@ This demo simplifies the production pipeline focusing primarily on the DPP filte
 
 
 ## Running the Demo
-Run the notebook `main.ipynb`
+Run the notebook `main.ipynb`, for example with uv:
+
+    uv run --with jupyter jupyter notebook
 
 ## Demo Overview
 1. Prepare movieLens data
