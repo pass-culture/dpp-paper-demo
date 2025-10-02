@@ -23,6 +23,9 @@ This demo simplifies the production pipeline focusing primarily on the DPP filte
 - We use the same DPP class as in the prodcution code to sample diversified recommendations. We use [`DPPy`](https://github.com/guilgautier/DPPy) library just like in production.
 - Visualize the impact of DPP-based diversification on items recommended with and without the DPP filter. We also add the volume metric calculations like showed in the paper. 
 
+
+### Read our paper [here](https://arxiv.org/abs/2509.10392)
+### Our poster [here](/poster_recsogood.pdf) 
 ---
 
 ## 📁 Repository Structure
